@@ -1,6 +1,7 @@
 export default function createObservable() {
   // 외부 접근 불가능
-  const listeners = new Set(); // [fn, fn, fn, ...]
+  // const listeners = new Set(); // [fn1, fn, fn, ...]
+  let listeners = []; // [fn1, fn, fn1, ...]
 
   const notify = (data) => {
     listeners.forEach((listener) => listener(data));
@@ -10,14 +11,14 @@ export default function createObservable() {
     if (typeof listener !== 'function') {
       throw new Error('listener 타입은 함수만 가능합니다.');
     }
-    listeners.add(listener);
+    listeners.push(listener);
   };
 
   const unsubscribe = (listener) => {
     if (typeof listener !== 'function') {
       throw new Error('listener 타입은 함수만 가능합니다.');
     }
-    listeners.delete(listener);
+    listeners = listeners.filter((l) => l !== listener);
   };
 
   // 외부 공개
