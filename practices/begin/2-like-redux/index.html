@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>리덕스 작동 원리 이해</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://tailwindui.com/img/logos/mark.svg?color=cyan&shade=400" type="image/xml+svg" />
+    <style type="text/tailwindcss">
+      @layer base {
+        .\!hidden {
+          @apply hidden !important;
+        }
+        * {
+          @apply outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2;
+        }
+      }
+      @layer components {
+        .header {
+          @apply flex justify-between items-center p-5 border-b border-b-slate-200 bg-white;
+        }
+        .logo {
+          @apply w-8 h-8;
+        }
+        .output {
+          @apply text-cyan-400 text-lg font-semibold bg-slate-50 px-2 rounded-md border border-sky-300;
+        }
+        .headline {
+          @apply text-2xl font-medium text-cyan-400 mb-5;
+        }
+        .form {
+          @apply mb-5 flex gap-2;
+
+          & input {
+            @apply py-1 px-2 border border-zinc-300 rounded text-zinc-700; 
+            @apply placeholder:text-zinc-400;
+          }
+        }
+        .button {
+          @apply py-1 px-3 bg-slate-50 text-slate-700 border border-slate-300 rounded;
+          @apply hover:bg-sky-100 hover:shadow-lg hover:border-sky-400 hover:text-sky-700;
+        }
+        .list {
+          @apply mt-5 border border-sky-400 rounded-md overflow-hidden shadow-md;
+
+          & li {
+            @apply flex justify-between items-center p-4 bg-sky-50 text-sky-700 border-b border-sky-400 last:border-0;
+          }
+        }
+      }
+    </style>
+    <script src="//cdn.tailwindcss.com" defer></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </head>
+
+  <body class="bg-zinc-50">
+
+    <header class="header">
+      <h1>
+        <img
+          class="logo"
+          src="https://tailwindui.com/img/logos/mark.svg?color=cyan&shade=400"
+          alt="로고" />
+      </h1>
+      <output class="output">0</output>
+    </header>
+
+    <main>
+      <div class="container mx-auto mt-12 max-w-2xl">
+        <h2 class="headline">리덕스처럼 생각하기</h2>
+        <form class="form">
+          <input type="text" name="newItem" placeholder="리덕스 구현하기" />
+          <button type="submit" class="button">추가</button>
+        </form>
+        <ul class="list"></ul>
+      </div>
+    </main>
+
+  </body>
+
+</html>
