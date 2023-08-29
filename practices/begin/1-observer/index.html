@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>옵저버 패턴</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://tailwindui.com/img/logos/mark.svg?color=cyan&shade=400" type="image/xml+svg" />
+    <style type="text/tailwindcss">
+      @layer base {
+        .\!hidden {
+          @apply hidden !important;
+        }
+      }
+      @layer components {
+        .header {
+          @apply flex justify-between items-center p-5 border-b border-b-slate-200 bg-white;
+        }
+        .logo {
+          @apply w-8 h-8;
+        }
+        .output {
+          @apply text-cyan-400 text-lg font-semibold bg-slate-50 px-2 rounded-md border border-sky-300;
+        }
+        .headline {
+          @apply text-2xl font-medium text-cyan-400 mb-5;
+        }
+        .button {
+          @apply py-1 px-3 bg-slate-50 text-slate-700 border border-slate-300 rounded;
+          @apply hover:bg-sky-100 hover:shadow-lg hover:border-sky-400 hover:text-sky-700;
+        }
+        .list {
+          @apply mt-5 border border-sky-400 rounded-md overflow-hidden shadow-md;
+
+          & li {
+            @apply p-4 bg-sky-50 text-sky-700 border-b border-sky-400 last:border-0;
+          }
+        }
+      }
+    </style>
+    <script src="//cdn.tailwindcss.com" defer></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </head>
+
+  <body class="bg-zinc-50">
+
+    <header class="header">
+      <h1>
+        <img
+          class="logo"
+          src="https://tailwindui.com/img/logos/mark.svg?color=cyan&shade=400" 
+          alt="로고" 
+        />
+      </h1>
+      <output class="output">3</output>
+    </header>
+
+    <main>
+      <div class="container mx-auto mt-12">
+        <h2 class="headline">옵저버(Observer) 패턴</h2>
+        <button type="button" class="button">항목 추가</button>
+        <ul class="list">
+          <li>아이템 1</li>
+          <li>아이템 2</li>
+          <li>아이템 3</li>
+        </ul>
+      </div>
+    </main>
+
+  </body>
+
+</html>
