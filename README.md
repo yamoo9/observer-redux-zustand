@@ -1,4 +1,4 @@
-## Obserber 패턴
+## Observer 패턴
 
 __관찰자 패턴(Observer Pattern)__ 은 이벤트가 발생할 때  
 옵저버블(`Observable`)을 사용해 구독자(`Subscriptor`)에게 알리는 방법입니다.
